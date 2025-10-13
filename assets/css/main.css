@@ -617,14 +617,42 @@ section,
 --------------------------------------------------------------*/
 .section-title {
   text-align: center;
-  padding-bottom: 60px;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
   position: relative;
 }
 
 .section-title h2 {
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 300;
   margin-bottom: 15px;
+}
+
+.section-title h2::after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--accent-color);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.section-title h2:before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 160px;
+    height: 1px;
+    background: 
+ color-mix(in srgb, var(--default-color), transparent 60%);
+    left: 0;
+    right: 0;
+    bottom: 1px;
+    margin: auto;
 }
 
 .section-title p {
@@ -715,7 +743,7 @@ section,
 }
 
 .about .content {
-  background: #eb863e;
+  background: #eb863eec;
   color: var(--contrast-color);
   padding: 7rem 0;
 }
@@ -795,144 +823,8 @@ section,
 
 .about-3 .pulsating-play-btn {
   position: absolute;
-  left: calc(50% - 77px);
+  left: calc(50% - 50px);
   top: calc(50% - 47px);
-}
-
-
-/*--------------------------------------------------------------
-# Clients Section
---------------------------------------------------------------*/
-.clients .swiper-slide img {
-  opacity: 0.5;
-  transition: 0.3s;
-  filter: grayscale(100);
-}
-
-.clients .swiper-slide img:hover {
-  filter: none;
-  opacity: 1;
-}
-
-.clients .swiper-wrapper {
-  height: auto;
-}
-
-.clients .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-  background-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.clients .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Cards Section
---------------------------------------------------------------*/
-.cards .card-item {
-  background: color-mix(in srgb, var(--default-color), transparent 97%);
-  padding: 50px 30px;
-  transition: all ease-in-out 0.3s;
-  height: 100%;
-  position: relative;
-}
-
-.cards .card-item span {
-  color: var(--accent-color);
-  display: block;
-  font-size: 28px;
-  font-weight: 700;
-}
-
-.cards .card-item h4 {
-  font-size: 24px;
-  font-weight: 600;
-  padding: 0;
-  margin: 20px 0;
-}
-
-.cards .card-item h4 a {
-  color: var(--heading-color);
-}
-
-.cards .card-item p {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  margin: 0;
-  padding: 0;
-}
-
-.cards .card-item:hover {
-  background: var(--accent-color);
-  padding: 30px 30px 70px 30px;
-}
-
-.cards .card-item:hover span,
-.cards .card-item:hover h4 a,
-.cards .card-item:hover p {
-  color: var(--contrast-color);
-}
-
-/*--------------------------------------------------------------
-# Services Section
---------------------------------------------------------------*/
-.services .service-item {
-  position: relative;
-  padding-top: 20px;
-}
-
-.services .service-item .icon {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 90%);
-  width: 72px;
-  height: 72px;
-  position: relative;
-  margin-right: 15px;
-  line-height: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: ease-in-out 0.3s;
-}
-
-.services .service-item .icon i {
-  color: var(--accent-color);
-  font-size: 32px;
-  z-index: 2;
-  position: relative;
-}
-
-.services .service-item .title {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 18px;
-}
-
-.services .service-item .title a {
-  color: var(--heading-color);
-}
-
-.services .service-item .title a:hover {
-  color: var(--accent-color);
-}
-
-.services .service-item .description {
-  font-size: 14px;
-}
-
-.services .service-item:hover .icon {
-  background-color: var(--accent-color);
-}
-
-.services .service-item:hover .icon i {
-  color: var(--contrast-color);
 }
 
 /*--------------------------------------------------------------
@@ -1109,6 +1001,134 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Services Section
+--------------------------------------------------------------*/
+.services {
+  position: relative;
+  margin-top: 70px;
+  padding: 90px 0 70px 0;
+  background-color: color-mix(in srgb, var(--accent-color), transparent 80%);
+}
+
+.services .services-content h2 {
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.services .services-content h2::after {
+  content: "";
+  width: 120px;
+  height: 1px;
+  display: inline-block;
+  background: var(--accent-color);
+  margin: 4px 10px;
+}
+
+@media (max-width: 992px) {
+  .services .services-content h2 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services .services-content h2 {
+    font-size: 28px;
+  }
+}
+
+.services .services-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.services .services-content .btn-consultation {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.services .services-content .btn-consultation span {
+  margin-right: 8px;
+}
+
+.services .services-content .btn-consultation i {
+  transition: transform 0.3s ease;
+}
+
+.services .services-content .btn-consultation:hover {
+  background-color: color-mix(in srgb, var(--accent-color), #000 15%);
+}
+
+.services .services-content .btn-consultation:hover i {
+  transform: translateX(5px);
+}
+
+.services .services-image {
+  position: relative;
+  height: 380px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.services .services-image img {
+  position: relative;
+  z-index: 2;
+  max-height: 100%;
+  object-fit: cover;
+}
+
+.services .services-image .shape-circle {
+  position: absolute;
+  right: -40px;
+  top: -40px;
+  height: 230px;
+  width: 230px;
+  background-color: color-mix(in srgb, #aa1f40, transparent 20%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: float 5s infinite ease-in-out;
+}
+
+.services .services-image .shape-accent {
+  position: absolute;
+  bottom: -40px;
+  left: -20px;
+  height: 150px;
+  width: 150px;
+  background-color: color-mix(in srgb, #e44832, transparent 20%);
+  z-index: 1;
+  animation: float 5s infinite ease-in-out;
+}
+
+@media (max-width: 992px) {
+  .services .services-image {
+    margin-top: 30px;
+    height: 300px;
+    justify-content: center;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/*--------------------------------------------------------------
 # Pricing Section
 --------------------------------------------------------------*/
 .pricing .pricing-item {
@@ -1211,296 +1231,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Faq Section
---------------------------------------------------------------*/
-.faq .content h3 {
-  font-weight: 400;
-  font-size: 34px;
-}
-
-.faq .content p {
-  font-size: 15px;
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-.faq .faq-container .faq-item {
-  background-color: var(--surface-color);
-  position: relative;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-}
-
-.faq .faq-container .faq-item:last-child {
-  margin-bottom: 0;
-}
-
-.faq .faq-container .faq-item h3 {
-  font-weight: 600;
-  font-size: 18px;
-  line-height: 24px;
-  margin: 0 30px 0 0;
-  transition: 0.3s;
-  cursor: pointer;
-  display: flex;
-  align-items: flex-start;
-}
-
-.faq .faq-container .faq-item h3 .num {
-  color: var(--accent-color);
-  padding-right: 5px;
-}
-
-.faq .faq-container .faq-item h3:hover {
-  color: var(--accent-color);
-}
-
-.faq .faq-container .faq-item .faq-content {
-  display: grid;
-  grid-template-rows: 0fr;
-  transition: 0.3s ease-in-out;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.faq .faq-container .faq-item .faq-content p {
-  margin-bottom: 0;
-  overflow: hidden;
-}
-
-.faq .faq-container .faq-item .faq-toggle {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 16px;
-  line-height: 0;
-  transition: 0.3s;
-  cursor: pointer;
-}
-
-.faq .faq-container .faq-item .faq-toggle:hover {
-  color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active h3 {
-  color: var(--accent-color);
-}
-
-.faq .faq-container .faq-active .faq-content {
-  grid-template-rows: 1fr;
-  visibility: visible;
-  opacity: 1;
-  padding-top: 10px;
-}
-
-.faq .faq-container .faq-active .faq-toggle {
-  transform: rotate(90deg);
-  color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Team Section
---------------------------------------------------------------*/
-.team .team-member {
-  background-color: var(--surface-color);
-  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-  position: relative;
-  border-radius: 5px;
-  transition: 0.5s;
-  padding: 30px;
-  height: 100%;
-}
-
-@media (max-width: 468px) {
-  .team .team-member {
-    flex-direction: column;
-    justify-content: center !important;
-    align-items: center !important;
-  }
-}
-
-.team .team-member .pic {
-  overflow: hidden;
-  width: 150px;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.team .team-member .pic img {
-  transition: ease-in-out 0.3s;
-}
-
-.team .team-member:hover {
-  transform: translateY(-10px);
-}
-
-.team .team-member .member-info {
-  padding-left: 30px;
-}
-
-@media (max-width: 468px) {
-  .team .team-member .member-info {
-    padding: 30px 0 0 0;
-    text-align: center;
-  }
-}
-
-.team .team-member h4 {
-  font-weight: 700;
-  margin-bottom: 5px;
-  font-size: 20px;
-}
-
-.team .team-member span {
-  display: block;
-  font-size: 15px;
-  padding-bottom: 10px;
-  position: relative;
-  font-weight: 500;
-}
-
-.team .team-member span::after {
-  content: '';
-  position: absolute;
-  display: block;
-  width: 50px;
-  height: 1px;
-  background: color-mix(in srgb, var(--default-color), transparent 85%);
-  bottom: 0;
-  left: 0;
-}
-
-@media (max-width: 468px) {
-  .team .team-member span::after {
-    left: calc(50% - 25px);
-  }
-}
-
-.team .team-member p {
-  margin: 10px 0 0 0;
-  font-size: 14px;
-}
-
-.team .team-member .social {
-  margin-top: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  width: 100%;
-}
-
-@media (max-width: 468px) {
-  .team .team-member .social {
-    justify-content: center;
-  }
-}
-
-.team .team-member .social a {
-  background: color-mix(in srgb, var(--default-color), transparent 94%);
-  transition: ease-in-out 0.3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50px;
-  width: 36px;
-  height: 36px;
-}
-
-.team .team-member .social a i {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  font-size: 16px;
-  margin: 0 2px;
-}
-
-.team .team-member .social a:hover {
-  background: var(--accent-color);
-}
-
-.team .team-member .social a:hover i {
-  color: var(--contrast-color);
-}
-
-.team .team-member .social a + a {
-  margin-left: 8px;
-}
-
-/*--------------------------------------------------------------
-# Contact Section
---------------------------------------------------------------*/
-.contact .info-item + .info-item {
-  margin-top: 40px;
-}
-
-.contact .info-item i {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  font-size: 20px;
-  width: 44px;
-  height: 44px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 4px;
-  transition: all 0.3s ease-in-out;
-  margin-right: 15px;
-}
-
-.contact .info-item h3 {
-  padding: 0;
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 5px;
-}
-
-.contact .info-item p {
-  padding: 0;
-  margin-bottom: 0;
-  font-size: 14px;
-}
-
-.contact .php-email-form {
-  height: 100%;
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: color-mix(in srgb, var(--background-color), transparent 50%);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type="submit"] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 4px;
-}
-
-.contact .php-email-form button[type="submit"]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-/*--------------------------------------------------------------
 # Portfolio Details Section
 --------------------------------------------------------------*/
 .portfolio-details .portfolio-details-slider img {
@@ -1560,77 +1290,4 @@ section,
 .portfolio-details .portfolio-description p {
   padding: 0;
   color: color-mix(in srgb, var(--default-color), transparent 30%);
-}
-
-/*--------------------------------------------------------------
-# Service Details Section
---------------------------------------------------------------*/
-.service-details .services-list {
-  background-color: var(--surface-color);
-  padding: 10px 30px;
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 90%);
-  margin-bottom: 20px;
-}
-
-.service-details .services-list a {
-  display: block;
-  line-height: 1;
-  padding: 8px 0 8px 15px;
-  border-left: 3px solid color-mix(in srgb, var(--default-color), transparent 70%);
-  margin: 20px 0;
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  transition: 0.3s;
-}
-
-.service-details .services-list a.active {
-  color: var(--heading-color);
-  font-weight: 700;
-  border-color: var(--accent-color);
-}
-
-.service-details .services-list a:hover {
-  border-color: var(--accent-color);
-}
-
-.service-details .services-img {
-  margin-bottom: 20px;
-}
-
-.service-details h3 {
-  font-size: 26px;
-  font-weight: 700;
-}
-
-.service-details h4 {
-  font-size: 20px;
-  font-weight: 700;
-}
-
-.service-details p {
-  font-size: 15px;
-}
-
-.service-details ul {
-  list-style: none;
-  padding: 0;
-  font-size: 15px;
-}
-
-.service-details ul li {
-  padding: 5px 0;
-  display: flex;
-  align-items: center;
-}
-
-.service-details ul i {
-  font-size: 20px;
-  margin-right: 8px;
-  color: var(--accent-color);
-}
-
-/*--------------------------------------------------------------
-# Starter Section Section
---------------------------------------------------------------*/
-.starter-section {
-  /* Add your styles here */
 }
