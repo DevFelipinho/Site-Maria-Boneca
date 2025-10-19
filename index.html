@@ -51,7 +51,7 @@
           <li><a href="#abouts" class="active"><i class="bi bi-hourglass-split" style="font-size: 18px; padding-right: 5px;"></i>História</a></li>
           <li><a href="#portfolio"><i class="bi bi-clipboard-pulse" style="font-size: 18px; padding-right: 5px;"></i>Atividades</a></li>
           <li><a href="#services"><i class="bi bi-globe-americas" style="font-size: 23px; padding-right: 5px;"></i>Protagonismo<br>Internacional</a></li>
-          <li><a href="#team"><i class="bi bi-coin" style="font-size: 18px; padding-right: 5px;"></i>Doações</a></li>
+          <li><a href="#pricing"><i class="bi bi-coin" style="font-size: 18px; padding-right: 5px;"></i>Doações</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -87,7 +87,7 @@
           <div class="row gy-4 justify-content-between align-items-center">
             <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
               <img src="assets/img/img_sq_1.jpg" alt="Image" class="img-fluid">
-              <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" class="glightbox pulsating-play-btn">
+              <a href="https://youtu.be/OXzdx-B74b8?si=8boVQzdThtRQJc1K" class="glightbox pulsating-play-btn">
                 <span class="play"><i class="bi bi-play-fill"></i></span>
               </a>
             </div>
@@ -164,7 +164,7 @@
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Exposição das Atividades</h2>
+        <h2><b>Exposição das Atividades</b></h2>
         <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
@@ -339,8 +339,28 @@
 
     </section><!-- /Services Section -->
 
-    <!-- Call To Action Section -->
-    <section id="call-to-action" class="call-to-action section dark-background">
+    <!-- Popup Section -->
+     <div class="popup-container">
+        <div class="popup-box">
+          <h3>Leia o QR Code ou copie o código Pix</h3>
+          <img src="assets/img/qrcode.png" class="img-fluid" alt="">
+          <button class="close-btn"><i class="bi bi-x-lg"></i></button>
+          <input type="text" name="" id="copiar-input" value="Lorem ipsum dolor sit amet">
+          <button id="copiar-btn" onclick="copiar()">Copiar</button>
+        </div>
+      </div>
+    <!-- /Popup Section -->
+     
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section" style="margin-bottom: 100px;">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2><b>Doações</b></h2>
+      </div><!-- End Section Title -->
+
+      <section id="call-to-action" class="call-to-action section dark-background">
 
       <img src="assets/img/cta-bg.jpg" alt="">
 
@@ -348,84 +368,16 @@
         <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
           <div class="col-xl-10">
             <div class="text-center">
-              <h3>Call To Action</h3>
+              <h3>Faça Sua Doação!</h3>
               <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a class="cta-btn" href="#">Call To Action</a>
+              <a class="cta-btn" title="Quero Doar!">Quero Doar!</a>
+              
             </div>
           </div>
         </div>
       </div>
 
-    </section><!-- /Call To Action Section -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Pricing</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
-      </div><!-- End Section Title -->
-
-      <div class="container">
-
-        <div class="row gy-4">
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-            <div class="pricing-item">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-            <div class="pricing-item recommended">
-              <span class="recommended-badge">Recommended</span>
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
-
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-            <div class="pricing-item">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div><!-- End Pricing Item -->
-
-        </div>
-
-      </div>
+    </section>
 
     </section><!-- /Pricing Section -->
 

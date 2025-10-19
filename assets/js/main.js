@@ -211,3 +211,42 @@
   document.addEventListener('scroll', navmenuScrollspy);
 
 })();
+
+/**
+* Popup
+*/
+
+const showPopup = document.querySelector('.cta-btn');
+const popupContainer = document.querySelector('.popup-container');
+const closeBtn = document.querySelector('.close-btn');
+
+showPopup.onclick = function(){
+  popupContainer.classList.add('active');
+}
+
+closeBtn.onclick = function(){
+  popupContainer.classList.remove('active');
+}
+
+/**
+* Popup Copiar
+*/
+
+function copiar(){
+  var copiado = document.getElementById('copiar-input').value;
+
+  if(navigator.clipboard.writeText(copiado))
+  {
+    document.getElementById('copiar-btn').textContent = 'Copiado!';
+    document.getElementById('copiar-btn').style.backgroundColor = 'white';
+    document.getElementById('copiar-btn').style.color = '#004444';
+    document.getElementById('copiar-btn').style.border = '2px solid #00ffff';
+  }
+
+  setInterval(function(){
+    document.getElementById('copiar-btn').textContent = 'Copiar';
+    document.getElementById('copiar-btn').style.backgroundColor = '#ffd078';
+    document.getElementById('copiar-btn').style.color = 'black';
+    document.getElementById('copiar-btn').style.border = '2px solid black';
+  }, 10000);
+}
