@@ -648,7 +648,8 @@ section,
     width: 160px;
     height: 1px;
     background: 
- color-mix(in srgb, var(--default-color), transparent 60%);
+    
+    color-mix(in srgb, var(--default-color), transparent 60%);
     left: 0;
     right: 0;
     bottom: 1px;
@@ -849,7 +850,7 @@ section,
 
 .call-to-action:before {
   content: '';
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  background: color-mix(in srgb, var(--background-color), transparent 30%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1116,7 +1117,7 @@ section,
   margin-bottom: 20px;
 }
 
-.services .services-content h2::after {
+.services .services-content h5::after {
   content: "";
   width: 120px;
   height: 1px;
@@ -1141,6 +1142,7 @@ section,
   font-size: 18px;
   line-height: 1.6;
   margin-bottom: 25px;
+  color: rgb(37, 37, 37);
 }
 
 .services .services-content .btn-consultation {
