@@ -755,6 +755,7 @@ section,
 
 .about p {
   color: var(--contrast-color);
+  font-size: 18px;
 }
 
 .about .content-title {
@@ -926,9 +927,25 @@ section,
 }
 
 .popup-container.active .popup-box{
+  transform: scale(1.0);
+  transition: .4s ease;
+  transition-delay: .15s;
+}
+
+@media (max-width: 1360px) {
+  .popup-container.active .popup-box{
+  transform: scale(0.8);
+  transition: .4s ease;
+  transition-delay: .15s;
+  }
+}
+
+@media (max-width: 900px) {
+  .popup-container.active .popup-box{
   transform: scale(1);
   transition: .4s ease;
   transition-delay: .15s;
+  }
 }
 
 .popup-container .popup-box .close-btn{
@@ -1098,6 +1115,14 @@ section,
 
 .portfolio .portfolio-content:hover img {
   transform: scale(1.1);
+}
+
+@media (min-width: 900px) {
+  .portfolio-info a i{
+    padding: 200px;
+    position: relative;
+    right: 200px;
+  }
 }
 
 /*--------------------------------------------------------------
