@@ -906,6 +906,13 @@ section,
   z-index: 10;
   transition: .2s ease;
   transition-delay: .15s;
+  margin-top: 150px;
+}
+
+@media (min-width: 992px) {
+  .popup-container{
+    margin-top: 100px;
+  }
 }
 
 .popup-container.active{
