@@ -947,7 +947,31 @@ section,
   }
 }
 
-@media (max-width: 900px) {
+@media (max-height: 800px) {
+  .popup-container.active .popup-box{
+  transform: scale(0.8);
+  transition: .4s ease;
+  transition-delay: .15s;
+  }
+}
+
+@media (max-height: 700px) {
+  .popup-container.active .popup-box{
+  transform: scale(0.7);
+  transition: .4s ease;
+  transition-delay: .15s;
+  }
+}
+
+@media (max-height: 600px) {
+  .popup-container.active .popup-box{
+  transform: scale(0.6);
+  transition: .4s ease;
+  transition-delay: .15s;
+  }
+}
+
+@media (max-width: 600px) {
   .popup-container.active .popup-box{
   transform: scale(1);
   transition: .4s ease;
