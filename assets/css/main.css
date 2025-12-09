@@ -33,6 +33,7 @@
 
 .dark-background {
   --background-color: #1d9696;
+  --darker-background-color: #136363;
   --default-color: #ffffff;
   --heading-color: #ffffff;
   --surface-color: #38cbcb;
@@ -550,6 +551,12 @@ section,
   position: absolute;
   left: calc(50% - 50px);
   top: calc(50% - 47px);
+}
+
+#about-3 p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: rgb(37, 37, 37);
 }
 
 /*--------------------------------------------------------------
@@ -1105,7 +1112,7 @@ section,
 
 .call-to-action:before {
   content: '';
-  background: color-mix(in srgb, var(--background-color), transparent 30%);
+  background: color-mix(in srgb, var(--darker-background-color), transparent 20%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1121,17 +1128,25 @@ section,
   margin-bottom: 30px;
   font-weight: 700;
   color: var(--default-color);
+  text-shadow: 2px 1px 3px black;
 }
 
 .call-to-action p {
   color: var(--default-color);
   margin-bottom: 30px;
+  font-size: 18px;
+  text-shadow: 2px 1px 3px black;
+}
+
+.call-to-action li {
+  font-size: 18px;
+  text-shadow: 2px 1px 3px black;
 }
 
 .call-to-action .cta-btn {
   font-family: var(--heading-font);
   font-weight: 500;
-  font-size: 16px;
+  font-size: 17px;
   letter-spacing: 1px;
   display: inline-block;
   padding: 12px 40px;
@@ -1140,6 +1155,7 @@ section,
   margin: 10px;
   border: 2px solid var(--contrast-color);
   color: var(--contrast-color);
+  text-shadow: 2px 1px 3px black;
 }
 
 .call-to-action .cta-btn:hover {
