@@ -212,41 +212,94 @@
 
 })();
 
-/**
-* Popup
-*/
+
+//Popup
 
 const showPopup = document.querySelector('.cta-btn');
 const popupContainer = document.querySelector('.popup-container');
+const popupBox = document.querySelector('.popup-box');
 const closeBtn = document.querySelector('.close-btn');
 
-showPopup.onclick = function(){
+const copiarBtn = document.querySelector('#copiar-btn');
+const copiarInput = document.querySelector('#copiar-input');
+const copiarFeedback = document.querySelector('#copiar-feedback');
+
+
+// Abrir popup
+showPopup.addEventListener('click', function(event) {
+  event.preventDefault();
+
   popupContainer.classList.add('active');
-}
 
-closeBtn.onclick = function(){
+  document.body.style.overflow = 'hidden';
+});
+
+
+// Fechar popup
+function fecharPopup() {
   popupContainer.classList.remove('active');
+
+  document.body.style.overflow = '';
 }
 
-/**
-* Popup Copiar
-*/
+closeBtn.addEventListener('click', fecharPopup);
 
-function copiar(){
-  var copiado = document.getElementById('copiar-input').value;
 
-  if(navigator.clipboard.writeText(copiado))
-  {
-    document.getElementById('copiar-btn').textContent = 'Copiado!';
-    document.getElementById('copiar-btn').style.backgroundColor = 'white';
-    document.getElementById('copiar-btn').style.color = '#004444';
-    document.getElementById('copiar-btn').style.border = '2px solid #00ffff';
+// Fechar clicando fora do popup
+popupContainer.addEventListener('click', function(event) {
+
+  if (event.target === popupContainer) {
+    fecharPopup();
   }
 
-  setInterval(function(){
-    document.getElementById('copiar-btn').textContent = 'Copiar';
-    document.getElementById('copiar-btn').style.backgroundColor = '#ffd078';
-    document.getElementById('copiar-btn').style.color = 'black';
-    document.getElementById('copiar-btn').style.border = '2px solid black';
-  }, 10000);
-}
+});
+
+
+// Fechar com ESC
+document.addEventListener('keydown', function(event) {
+
+  if (event.key === 'Escape') {
+    fecharPopup();
+  }
+
+});
+
+
+// Copiar Pix
+copiarBtn.addEventListener('click', async function() {
+
+  const valor = copiarInput.value;
+
+  try {
+
+    await navigator.clipboard.writeText(valor);
+
+    copiarBtn.classList.add('copiado');
+
+    copiarBtn.querySelector('i').className = 'bi bi-check-lg';
+    copiarBtn.querySelector('span').textContent = 'Copiado!';
+
+    copiarFeedback.textContent = 'Chave Pix copiada!';
+    copiarFeedback.classList.add('show');
+
+    setTimeout(function() {
+
+      copiarBtn.classList.remove('copiado');
+
+      copiarBtn.querySelector('i').className = 'bi bi-copy';
+      copiarBtn.querySelector('span').textContent = 'Copiar';
+
+      copiarFeedback.classList.remove('show');
+
+    }, 3000);
+
+  } catch (error) {
+
+    console.error('Erro ao copiar:', error);
+
+    copiarFeedback.textContent = 'Não foi possível copiar automaticamente.';
+    copiarFeedback.classList.add('show');
+
+  }
+
+});
